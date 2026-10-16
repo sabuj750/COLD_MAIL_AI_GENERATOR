@@ -18,6 +18,7 @@ app.use(cors({
     credentials: true
 }));
 
+// hey this is the testing route
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
