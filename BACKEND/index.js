@@ -13,10 +13,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({
+app.use(
+  cors({
     origin: process.env.FRONTEND_URL || true,
-    credentials: true
-}));
+    credentials: true,
+  }),
+);
 
 // hey this is the testing route
 app.get("/", (req, res) => {
@@ -24,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoute);
-app.use('/api/ai' , aiRoute);
+app.use("/api/ai", aiRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
