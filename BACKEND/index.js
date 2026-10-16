@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   "http://localhost:5173",
+  "https://cold-mail-ai-generator.vercel.app",
 ].filter(Boolean);
 
 app.use(
